@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+<title>Palindrome Identification</title>
+<body>
+  <div>
+    <label for="text-input">Is this a Palindrome? </label>
+    <input id="text-input" type="text">
+    <button id="check-btn">Are You Sure?</button>
+  </div>
+  <div><span id="result">Results are here.</span></div>
+  <script src="script.js"></script>
+</body>
+
+<!-- ** end of index.html **
+
+** start of script.js **
+
+const button = document.querySelector("#check-btn")
+const input = document.getElementById("text-input");
+const result = document.getElementById("result");
+
+
+
+const checkIfEmpty = () => {
+  const checker = input.value.trim();
+
+  if(checker === "") {
+    alert("Please input a value");
+    return
+  } else {
+    palindromeChecker();
+    return
+  };
+}
+const palindromeChecker = () => {
+  const check = input.value.trim().toLowerCase();
+  const cleanInput = check.replace(/[^a-z0-9]/g, "");
+  const reverseInput = cleanInput.split("").reverse().join("");
+
+  if (cleanInput === reverseInput) { 
+    result.textContent = input.value + " is a palindrome";
+  } 
+  else { 
+    result.textContent =  input.value + " is not a palindrome";
+  }
+}
+
+button.addEventListener("click", checkIfEmpty);
+
+** end of script.js **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+ -->
