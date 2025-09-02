@@ -8,7 +8,7 @@ const checkIfEmpty = () => {
   const checker = input.value.trim();
 
   if(checker === "") {
-    alert("Please input a value");
+    alert("Please input a value.");
     return
   } else {
     palindromeChecker();
@@ -21,10 +21,10 @@ const palindromeChecker = () => {
   const reverseInput = cleanInput.split("").reverse().join("");
 
   if (cleanInput === reverseInput) { 
-    result.textContent = input.value + " is a palindrome";
+    result.textContent = input.value + " is a palindrome.";
   } 
   else { 
-    result.textContent =  input.value + " is not a palindrome";
+    result.textContent =  input.value + " is not a palindrome.";
   }
 }
 button.addEventListener("click", checkIfEmpty);
